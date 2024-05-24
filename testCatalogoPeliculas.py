@@ -4,6 +4,7 @@ from Servicio.catalogo_peliculas import CatalogoPeliculas as cp
 opcion= None
 
 while opcion !=4:
+  try:  
     print('Opciones: ')
     print('1. Agregar pelicula')
     print('2. Listar peliculas')
@@ -19,5 +20,9 @@ while opcion !=4:
         cp.listar_peliculas
     elif opcion == 3:
         cp.eliminar_peliculas(pelicula)
+  
+  except Exception as e:    
+        print(f'Error {e}')
+        opcion= None
 else:
     print('Salimos del programa')
